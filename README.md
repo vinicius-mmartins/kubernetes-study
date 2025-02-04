@@ -26,8 +26,11 @@ Talvez farei também uma pipeline ao final, para as aplicações. build artefato
 ##### API:
 
 - [x] endpoints de entrada
-  - [ ] primeiro só um hello, world pra deploy na estrutura do kubernetes
+  - [x] primeiro só um hello, world pra deploy na estrutura do kubernetes
   - [ ] criar os outros que simula funcionalidades
+  - [ ] funcionalidades:
+    - [ ] 1
+    - [ ] 2
 - [ ] simulações de processamento (thread sleep e logs)
 - [ ] publicação em fila (container kafka)
 - [ ] Query na base de dados
@@ -79,6 +82,14 @@ Pensar se usa o ip do cluster direto ou coloca um gateway, ficaria mais profissi
 
 "Terraformar" a parte cloud, pra desabilitar com facilidade e já colocar terraform num exemplo de portfolio
 
+##### CI/CD Pipelines
+
+- [ ] CI pipeline (test, build, upload img)
+- [ ] CD pipeline (deploy)
+- [ ] segurança na pipeline sem expor dados sensíveis
+- [ ] pipeline simples como github action?
+- [ ] ArgoCD (usar essa estrutura pra estudar argocd mais na frente)
+
 ## Comandos
 
 Para construir o artefato:
@@ -101,7 +112,17 @@ docker run -p 8080:8080 k8s-api
 
 ### Passos que segui
 
+Pra pegar as credenciais do goodle da minha maquina:
+`export GOOGLE_APPLICATION_CREDENTIALS=~/workspace/study/kubernetes-study/terraform/gcp-key.json`
 
+Usar kubectl no gke:
+gcloud container clusters get-credentials k8s-and-obs-cluster --project k8s-and-observability --zone=us-central1-a
+
+Configurar projeto e zona pra não precisar ficar passando os parametros no comando:
+gcloud config set project k8s-and-observability  
+gcloud config set compute/zone us-central1-a
+
+Construir a img com o script e fazer deploy utilizando a img local se possivel. Dps passar a img pro registry e usar de lá.
 
 # Rascunho
 

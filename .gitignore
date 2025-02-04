@@ -1,7 +1,9 @@
-
 ### private ###
 gcp
-
+terraform/gcp-key.json
+terraform/terraform.*
+terraform/.terraform.lock.hcl
+terraform/.terraform
 
 HELP.md
 .gradle

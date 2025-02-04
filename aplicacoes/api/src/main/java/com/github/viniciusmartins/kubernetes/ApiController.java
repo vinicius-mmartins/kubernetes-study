@@ -14,3 +14,5 @@ public class ApiController {
     }
 
 }
+
+// fazer o log do hash da classe
