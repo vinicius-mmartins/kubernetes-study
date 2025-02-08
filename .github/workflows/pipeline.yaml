@@ -32,8 +32,8 @@ jobs:
         ./gradlew build
 
     - name: Obter versão do Jar
-      run: | 
-        VERSION=$(grep "^version" gradle.properties | cut -d'=' -f2)
+      run: |
+        VERSION=$(grep "^version" aplicacoes/api/gradle.properties | cut -d'=' -f2)
         echo "$VERSION"
 
     - name: Build API Docker image
