@@ -31,3 +31,7 @@ jobs:
         cd aplicacoes/api
         ./gradlew build
 
+    - name: Build API Docker image
+      run: |
+        docker build . --file Dockerfile --tag my-image-name:$(date +%s)
+        ls
