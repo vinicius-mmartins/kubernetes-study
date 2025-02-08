@@ -33,12 +33,12 @@ jobs:
 
     - name: Obter versão do Jar
       run: |
-        VERSION=$(grep "^version" aplicacoes/api/gradle.properties | cut -d'=' -f2)
-        echo "$VERSION"
+        VERSION=$(grep "^version" aplicacoes/api/gradle.properties | cut -d'=' -f2) >> $GITHUB_ENV
+        echo "$env.VERSION"
 
     - name: Build API Docker image
       run: |
-        docker build -t k8s-api:$VERSION .
+        docker build -t k8s-api:${{env.VERSION}} .
 
     - name: conferir nome image
       run: docker images | grep k8s
