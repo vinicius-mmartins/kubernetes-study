@@ -19,6 +19,8 @@ Talvez farei também uma pipeline ao final, para as aplicações. build artefato
   - [ ] HPA
   - [ ] Job
   - [ ] CronJob
+  - [ ] Kustomize
+  - [ ] kubectl rollout
 - [ ] Cloud Managed Cluster (GKE nesse estudo)
 
 #### Aplicações pra essa Prova de Conceito
@@ -165,3 +167,4 @@ rodar container com eles, pelo menos os open source.
 ### Componentes e Arquitetura
 
 https://kubernetes.io/docs/concepts/architecture/
+https://www.baeldung.com/ops/deployment-rollout-kubernetes
