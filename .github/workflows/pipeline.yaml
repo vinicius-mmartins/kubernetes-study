@@ -28,6 +28,6 @@ jobs:
 
     - name: Build with Gradle
       run: |
-        chmod +x gradlew
+        cd aplicacoes/api
         ./gradlew build
 
