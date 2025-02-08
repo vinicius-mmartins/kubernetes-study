@@ -36,7 +36,7 @@ jobs:
 
     - name: Build API Docker image
       run: |
-        docker build -f aplicacoes/api/Dockerfile --tag k8s-api:${{ env.VERSION }}
+        docker build . --tag k8s-api:${{ env.VERSION }}
 
     - name: conferir nome image
       run: docker images | grep k8s
