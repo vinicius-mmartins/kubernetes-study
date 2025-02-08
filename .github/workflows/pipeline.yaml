@@ -1,4 +1,4 @@
-name: actions pipeline
+name: CI - Build and Image Publish 
 
 on: 
   workflow_dispatch:
@@ -26,12 +26,17 @@ jobs:
     - name: Setup Gradle
       uses: gradle/actions/setup-gradle@af1da67850ed9a4cedd57bfd976089dd991e2582 # v4.0.0
 
-    - name: Build with Gradle
+    - name: Build Jar with Gradle
       run: |
         cd aplicacoes/api
         ./gradlew build
 
+    - name: Obter versão do Jar
+      run: VERSION=$(grep "^version" gradle.properties | cut -d'=' -f2) >> $GITHUB_ENV
+
     - name: Build API Docker image
       run: |
-        docker build . --file Dockerfile --tag my-image-name:$(date +%s)
-        ls
+        docker build -f aplicacoes/api/Dockerfile --tag k8s-api:${{ env.VERSION }}
+
+    - name: conferir nome image
+      run: docker images | grep k8s

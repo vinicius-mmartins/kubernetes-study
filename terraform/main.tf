@@ -41,3 +41,9 @@ resource "google_container_node_pool" "primary_preemptible_nodes" {
     ]
   }
 }
+
+resource "google_artifact_registry_repository" "k8s-and-obs-registry" {
+  location      = "us-central1-a"
+  repository_id = "-a5pj6"
+  format        = "DOCKER"
+}

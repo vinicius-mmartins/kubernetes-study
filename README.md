@@ -84,6 +84,9 @@ Pensar se usa o ip do cluster direto ou coloca um gateway, ficaria mais profissi
 
 "Terraformar" a parte cloud, pra desabilitar com facilidade e já colocar terraform num exemplo de portfolio
 
+- [x] gke
+- [ ] registry
+
 ##### CI/CD Pipelines
 
 - [ ] CI pipeline (test, build, upload img)
