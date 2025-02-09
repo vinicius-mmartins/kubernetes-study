@@ -34,7 +34,7 @@ jobs:
     - name: Obter versão do Jar
       run: |
         echo "API_VERSION=$(grep "^version" aplicacoes/api/gradle.properties | cut -d'=' -f2)" >> $GITHUB_ENV
-        ECHO $API_VERSION
+        echo $API_VERSION
         echo "${{ env.API_VERSION }}"
 
     - name: Build API Docker image
