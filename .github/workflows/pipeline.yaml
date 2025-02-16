@@ -31,15 +31,19 @@ jobs:
         cd aplicacoes/api
         ./gradlew build
 
-    - name: Obter versão do Jar
-      run: |
-        echo API_VERSION=$(grep "^version" aplicacoes/api/gradle.properties | cut -d'=' -f2) >> $GITHUB_ENV
-        echo $API_VERSION
-        echo "${{ env.API_VERSION }}"
+    # - name: Obter versão do Jar
+      # run: |
+      #   echo API_VERSION=$(grep "^version" aplicacoes/api/gradle.properties | cut -d'=' -f2) >> $GITHUB_ENV
+      #   echo $API_VERSION
+      #   echo "${{ env.API_VERSION }}"
+
+    # - name: Build API Docker image
+    #   run: |
+    #     docker build -t k8s-api:${{ env.API_VERSION }} .
 
     - name: Build API Docker image
       run: |
-        docker build -t k8s-api:${{ env.API_VERSION }} .
+        docker build -t k8s-api:snapshot .
 
-    - name: conferir nome image
-      run: docker images | grep k8s
+    # - name: conferir nome image
+      # run: docker images | grep k8s
