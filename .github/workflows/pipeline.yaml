@@ -43,6 +43,7 @@ jobs:
 
     - name: Build API Docker image
       run: |
+        cd aplicacoes/api
         docker build -t k8s-api:snapshot .
 
     # - name: conferir nome image
